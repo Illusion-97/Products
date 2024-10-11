@@ -19,6 +19,7 @@ export const routes: Routes = [
       products: () => inject(ProductService).all()
     }
   },
+  {path: "panier", loadComponent: () => import('../views/chart/chart.component').then(m => m.ChartComponent)},
   {path: "**", loadComponent: () => import('../views/not-found/not-found.component').then(m => m.NotFoundComponent)}
 ];
 

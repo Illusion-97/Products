@@ -22,7 +22,7 @@
         <ul class="py-2" aria-labelledby="user-menu-button">
           @if(auth.isLogged) {
             <li>
-              <a routerLink="/history" class="block px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Commands</a>
+              <a routerLink="/panier" class="block px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Panier</a>
             </li>
             <li>
               <button (click)="auth.logout()" class="block px-4 py-2 w-full text-sm text-red-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-red-800 dark:hover:text-white">Sign out</button>
