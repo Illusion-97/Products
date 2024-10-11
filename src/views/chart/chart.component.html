@@ -1,0 +1,37 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg h-full">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 h-full">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="px-6 py-3">
+        Product name
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Price
+      </th>
+      <th scope="col" class="px-6 py-3">
+      </th>
+    </tr>
+    </thead>
+    <tbody class="overflow-y-auto">
+      @for (entry of service.entries; track $index; let last = $last) {
+        <tr [class]="{'border-b dark:border-gray-700' : !last}" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            {{entry[0].name}}
+          </th>
+          <td class="px-6 py-4">
+            {{entry[0].price}}
+          </td>
+          <td class="px-6 py-4 w-2/12">
+            <input class="border rounded-2xl bg-blue-500 w-full text-white px-3" type="number" min="0" [ngModel]="service.get(entry[0])" (ngModelChange)="service.set(entry[0],$event)">
+          </td>
+        </tr>
+      }
+    </tbody>
+    <tfoot>
+    <tr>
+      <td> Prix Total : </td>
+      <td> <button>Valider le panier</button></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

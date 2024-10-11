@@ -1,0 +1,5 @@
+<div class="flex flex-wrap justify-evenly items-center gap-4">
+  @for (product of products | async; track $index) {
+    <app-product [product]="product"/>
+  }
+</div>
